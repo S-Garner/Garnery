@@ -2,7 +2,7 @@ package config
 
 import (
 	"fmt"
-	//"log" // Keep log for potential logging within the function
+	//"log" //
 	"github.com/bigkevmcd/go-configparser"
 )
 
@@ -17,7 +17,7 @@ type Conn_Info struct {
 func Get_Connect_Info() (Conn_Info, error) { // Changed signature
 	var connInfo Conn_Info
 
-	// Using NewConfigParserFromFile is correct
+	// Using NewConf
 	config, err := configparser.NewConfigParserFromFile("config/config.conf")
 	if err != nil {
 		return Conn_Info{}, fmt.Errorf("failed to load config file: %w", err) // Return error
@@ -49,13 +49,13 @@ func Get_Connect_Info() (Conn_Info, error) { // Changed signature
 		return Conn_Info{}, fmt.Errorf("failed to get 'data' from config: %w", err) // Return error
 	}
 
-	// For demonstration, let's print the loaded info
-	fmt.Printf("Parsed Connection Info:\n")
-	fmt.Printf("User: %s\n", connInfo.User)
-	fmt.Printf("Password: %s\n", connInfo.Password)
-	fmt.Printf("Host: %s\n", connInfo.Host)
-	fmt.Printf("Port: %s\n", connInfo.Port)
-	fmt.Printf("Database: %s\n", connInfo.Database)
+
+	//fmt.Printf("Parsed Connection Info:\n")
+	//fmt.Printf("User: %s\n", connInfo.User)
+	//fmt.Printf("Password: %s\n", connInfo.Password)
+	//fmt.Printf("Host: %s\n", connInfo.Host)
+	//fmt.Printf("Port: %s\n", connInfo.Port)
+	//fmt.Printf("Database: %s\n", connInfo.Database)
 
 	return connInfo, nil // Return the struct and nil for no error
 }
