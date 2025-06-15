@@ -25,6 +25,7 @@
 *~
 *.log
 .DS_Store
+*.conf
 
 # Compiled Go programs
 # This ignores any executable output from 'go build' or 'go install'
